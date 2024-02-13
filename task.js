@@ -35,37 +35,39 @@ function deleteInvalids (array){
         num.push(numbers);
         
     }
-
+    
 }
-return num;
+    return num;
 
 }
 
 function password(info){
     
-    let string = info.birthYear.toString()
+    let string = info.birthYear.toString();
     let len =string.length;
 
-    if(typeof info!=="object" ||!info.websiteName||!info.quation||!info.name ||!info.quations||!info.birthYear||len!==4){
+    if(typeof info!=="object" ||!info.siteName||!info.name ||!info.birthYear||len!==4){
         return "invalid";
     }
     
-    let capitalized=info.websiteName.charAt(0).toUpperCase()+info.websiteName.slice(1);
+    let capitalized=info.siteName.charAt(0).toUpperCase()+info.siteName.slice(1);
     
 
-    return `${capitalized}${info.quation}${info.name}${info.quations}${info.birthYear}`;
+    return `${capitalized}#${info.name}@${info.birthYear}`;
     
 
 }
 
+
+
 function monthlySavings(arr,livingCost){
     let sum = 0;
     if(Array.isArray(arr)==true && typeof livingCost =="number"){
-        for (const income of arr) {
+        for (let income of arr) {
             if(income>=3000){
                 income= income*0.8;
             }
-            sum= sum+income;
+            sum+=income;
             
         }
         var savings = sum-livingCost;
@@ -84,6 +86,6 @@ else{
 }
 
 }
-    
+
 
 
